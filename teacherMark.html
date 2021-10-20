@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>teacherGroup</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+    <script crossorigin="anonymous" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="css/teacherMain.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet"/>
+    <script src="js/prism.js"></script>
+    
+</head>
+<body>
+<div class="container-md border-rounded main-container p-5">
+    <div class="row">
+        <h1 class="col-12">                
+            Exercise 1
+        </h1>
+        <div class="col-4 p-2">
+                <div >
+                    <form action="showStudent.php" method="post">
+                    <input id="litter" type="text" placeholder="Assessment Name" name="AssNum" />
+                    </form>
+
+                    <input type="submit" value="Search" onclick="showSite(litter.value)"/>
+                    <br>
+                    <div id="txtHint"><b> </b></div> 
+                </div>            
+        </div>
+        
+    </div>
+        <h1 class="col-12">
+            Final Mark
+        </h1>
+        
+        <div class="col-10">
+            <form action="FinalMark.php" method="post" class="text-start" >
+            <label class="form-label" for="answerId">SubjectName</label>
+            <input class="form-control" id="answerId" placeholder="Enter SubjectName" type="text" name="SubjectName">
+
+            <label class="form-label" for="answerId">Student Email</label>
+            <input class="form-control" id="answerId" placeholder="Enter Student Email" type="text" name="Email">
+
+            <label class="form-label" for="answerId">Final Mark</label>
+            <input class="form-control" id="answerId" placeholder="Enter Final Mark" type="text" name="FinalMark">
+
+            <button class="btn btn-primary w-100" type="submit">Save</button>
+            </form>
+        </div>
+
+
+
+</div>
+
+<script type="text/javascript">
+</script>
+
+<script>
+function showSite(str)
+{
+    
+    if (str=="")
+    {
+        document.getElementById("txtHint").innerHTML="无输入";//这里小改，参数为空显示【无输入】
+        return;
+    } 
+    if (window.XMLHttpRequest)
+    {
+        // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {
+        // IE6, IE5 浏览器执行代码
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("GET","showStudent.php?q="+str,true);
+    xmlhttp.send();
+}
+</script>
+
+
+</body>
+</html>
