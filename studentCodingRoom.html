@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        online compiler
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel=stylesheet href="codemirror-5.59.4/doc/docs.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/lib/codemirror.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/addon/hint/show-hint.css">
+
+    <script src="codemirror-5.59.4/lib/codemirror.js"></script>
+    <script src="codemirror-5.59.4/addon/edit/matchbrackets.js"></script>
+    <script src="codemirror-5.59.4/addon/hint/show-hint.js"></script>
+    <script src="codemirror-5.59.4/mode/clike/clike.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/3024-day.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/3024-night.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/abcdef.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/ambiance.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/ayu-dark.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/ayu-mirage.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/base16-dark.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/bespin.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/base16-light.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/blackboard.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/cobalt.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/colorforth.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/dracula.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/duotone-dark.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/duotone-light.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/eclipse.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/elegant.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/erlang-dark.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/gruvbox-dark.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/hopscotch.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/icecoder.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/isotope.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/lesser-dark.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/liquibyte.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/lucario.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/material.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/material-darker.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/material-palenight.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/material-ocean.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/mbo.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/mdn-like.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/midnight.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/monokai.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/moxer.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/neat.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/neo.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/night.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/nord.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/oceanic-next.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/panda-syntax.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/paraiso-dark.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/paraiso-light.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/pastel-on-dark.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/railscasts.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/rubyblue.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/seti.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/shadowfox.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/solarized.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/the-matrix.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/tomorrow-night-bright.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/ttcn.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/twilight.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/vibrant-ink.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/xq-dark.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/xq-light.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/yeti.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/idea.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/darcula.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/yonce.css">
+    <link rel="stylesheet" href="codemirror-5.59.4/theme/zenburn.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/studentCodingRoom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+</head>
+
+<body>
+
+<div class="container-md border-rounded main-container p-5">
+    <div class="row">
+        <div class="col-4 p-2">
+            <h2>Questions</h2>
+            <div><a href="studentMarks.html">
+            <h1 class="btn btn-primary w-100">View Mark</h1>
+            </a></div>
+            <div class="left-container">
+                
+                    <ul>
+                        <li data-jstree='{"opened":true}'>Subject 
+                            <ul>
+
+                                <li  file-id="exercise1-question1" 
+                                 data-jstree='{"icon":"https://old.jstree.com/static/v.1.0pre/_demo/file.png"}' ><a href="readPDF.php" enctype="multipart/form-data" method="post" data="data:application/pdf;base64" type="application/pdf">Exercise 1 </a></li>
+                                
+                                <li href="readPDF2.php" file-id="exercise1-question2" data-jstree='{"icon":"https://old.jstree.com/static/v.1.0pre/_demo/file.png"}'><a href="readPDF2.php" enctype="multipart/form-data" method="post" data="data:application/pdf;base64" type="application/pdf">Exercise 2</a></li>
+                                <li href="readPDF3.php" file-id="exercise1-question3" data-jstree='{"icon":"https://old.jstree.com/static/v.1.0pre/_demo/file.png"}'><a href="readPDF3.php" enctype="multipart/form-data" method="post" data="data:application/pdf;base64" type="application/pdf">Exercise 3</a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+
+            </div>
+        </div>
+        <div class="col-8">
+            <a class="btn btn-secondary text-white float-end" href="studentMain.html">Back</a>
+            
+                <select class="form-control" style="margin-top: 25px;">
+                    <option value="c99">-</option>
+                    <option value="cpp">--</option>
+                    <option value="java">Java</option>
+                </select>
+         
+    
+
+    <div class="text_editor">
+        <div class="code_area">
+            <textarea id="c-code">#include <stdio.h>
+int main() {
+// Write your code here
+int a,b;
+scanf("%d%d",&a,&b);
+printf("%d\n",a+b);
+return 0;
+}</textarea>
+        </div>
+    </div>
+    <div class="theme_stdin">
+        <div class="theme_choice">
+            <p>Choose one color style: <select onchange="selectTheme()" id=select class="form-control" style="width: 20%;">
+                <option selected>default</option><option>3024-day</option>
+                <option>3024-night</option><option>abcdef</option>
+                <option>ambiance</option><option>ayu-dark</option>
+                <option>ayu-mirage</option><option>base16-dark</option>
+                <option>base16-light</option><option>bespin</option>
+                <option>blackboard</option><option>cobalt</option>
+                <option>colorforth</option><option>darcula</option>
+                <option>dracula</option><option>duotone-dark</option>
+                <option>duotone-light</option><option>eclipse</option>
+                <option>elegant</option><option>erlang-dark</option>
+                <option>gruvbox-dark</option> <option>hopscotch</option>
+                <option>icecoder</option><option>idea</option>
+                <option>isotope</option><option>lesser-dark</option>
+                <option>liquibyte</option><option>lucario</option>
+                <option>material</option><option>material-darker</option>
+                <option>material-palenight</option><option>material-ocean</option>
+                <option>mbo</option><option>mdn-like</option>
+                <option>midnight</option><option>monokai</option>
+                <option>moxer</option><option>neat</option>
+                <option>neo</option><option>night</option>
+                <option>nord</option><option>oceanic-next</option>
+                <option>panda-syntax</option><option>paraiso-dark</option>
+                <option>paraiso-light</option><option>pastel-on-dark</option>
+                <option>railscasts</option> <option>rubyblue</option>
+                <option>seti</option><option>shadowfox</option>
+                <option>solarized dark</option><option>solarized light</option>
+                <option>the-matrix</option><option>tomorrow-night-bright</option>
+                <option>tomorrow-night-eighties</option><option>ttcn</option>
+                <option>twilight</option><option>vibrant-ink</option>
+                <option>xq-dark</option><option>xq-light</option>
+                <option>yeti</option><option>yonce</option>
+                <option>zenburn</option>
+            </select>
+            </p>
+        </div>
+        <div class="stdin">
+            <p>
+                Input：<textarea id="stdinput" >1 2</textarea>
+            </p>
+        </div>
+    </div>
+    <div class="stdout">
+        <p>
+            Output：<textarea id="stdoutput"></textarea>
+        </p>
+    </div>
+    
+    <div class="compiler">
+        <button class="btn btn-success" style="margin: 20px;"> Run </button>
+    </div>
+    
+    <div class="footer">
+        
+    </div>
+    
+    <script src="./sandbox.js"></script>
+    
+    <div class="modal-body mb-4">
+        <form   id="sumbitAnswer" class="text-start px-5" action="SumAnswer.php"  method="post">
+            <label class="form-label" for="answerId">Assessment Number</label>
+            <input class="form-control" id="answerId" placeholder="Enter Assessment Number" type="text" name="AssNum">
+
+
+            <label class="form-label" for="answerId">code</label>
+            <input class="form-control" id="answerId" placeholder="Enter your final answer" type="text" name="CodeAnswer">
+
+            <label class="form-label" for="answerId">output answer</label>
+            <input class="form-control" id="answerId" placeholder="Enter your final answer" type="text" name="OutputAnswer">
+
+            <button class="btn btn-primary w-100" type="submit">Submit</button>
+        </form>
+    </div>
+
+    
+</body>
+
+</html>
